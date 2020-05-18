@@ -3,28 +3,55 @@
 
     <div class="jumbotron bg-overlay">
       <div class="container text-center">
-        <h1><a href="{% url 'home' %}">Tutor Marketplace</a></h1>
+        <h1>Tutor Marketplace</h1>
+        <p>We connect language teachers and students</p>
+        <a href="{% url 'signup' %}">Sign up today as a teacher or student!</a>
       </div>
     </div>
     <!--TODO: fill out action and method-->
     <div>
-      <form class="form-inline" action="#"> Search for Teachers by Language:
-        <input type="email" class="form-control" size="50" placeholder="Email Address">
-        <button type="button" class="btn btn-danger">Sign Up</button>
+      <form class="form-group" action="#"> Search for Teachers by Language:
+        <input type="text" class="form-control" size="50" placeholder="ex. English">
+        <button type="button" class="btn btn-danger">Search</button>
       </form>
     </div>
-
+  
   <div class="container">
-    <div class="row">
-      <div class="col-sm-4">
-        <div class="panel panel-primary">
-          <div class="panel-heading">LANGUAGE</div>
-          <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive"
-              style="width:100%" alt="Image"></div>
-          <div class="panel-footer">Find teachers!</div>
-        </div>
+    {% for language in languages %}
+    <!--Only display languages with teachers-->
+    {% if language.teacher_set.count %}
+    <div class="row align-items-center">
+      <div class="col-md-2">
+        <h3>{{ language.name }}</h3>
+      </div>
+      <div class="col-md-4">
+        <span><a href="{% url 'teachers_filtered' language.id %}">View More Teachers</a></span>
       </div>
     </div>
+    <div class="row">
+      <!--Display 2 teachers in this language-->
+      {% for teacher in language.teacher_set.all|slice:":2" %}
+        <div class="col-sm-6">
+          <div class="card">
+            <!--Make entire card a link-->
+            <a href="{% url 'teacher_details' teacher.id %}">
+              <!--Teacher Name-->
+              <div class="card-header text-center">
+                <h5>{{ teacher.full_name }}</h5>
+              </div>
+              <!--Teacher Image-->
+              <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%"
+                  alt="Image"></div>
+              <div class="card-footer text-center">
+                <button class="btn btn-primary">View Profile</button>
+              </div>
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% endfor %}
   </div>
 
 {% endblock %}

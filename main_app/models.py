@@ -16,6 +16,20 @@ class Language(models.Model):
     def __str__(self):
         return self.name
 
+    def get_lessons_without_students_count(self):
+      return self.lesson_set.filter(student__isnull=True).count()
+
+
+
+class Teacher(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    full_name = models.CharField(max_length =100)
+    language = models.ForeignKey(Language, null=True, on_delete=models.SET_NULL)
+    bio = models.TextField(null=True, max_length = 250)
+
+    def __str__(self):
+        return self.full_name
+
 
 class Lesson(models.Model):
     name = models.CharField(max_length =50)
@@ -23,6 +37,7 @@ class Lesson(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     time = models.DateTimeField()
     language = models.ForeignKey(Language, null=True, on_delete=models.SET_NULL)
+    teacher = models.ForeignKey(Teacher, null=True, on_delete=models.CASCADE)
     level = models.CharField(
     'Level',
     max_length=1,
@@ -37,23 +52,12 @@ class Lesson(models.Model):
 class Student(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     full_name = models.CharField(max_length =100)
-    lesson = models.ManyToManyField(Lesson, blank=True)
+    lesson = models.ManyToManyField(Lesson, null=True, blank=True)
 
     def __str__(self):
         return self.full_name
 
 
-class Teacher(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    full_name = models.CharField(max_length =100)
-    # Join table for what follows?
-    student = models.ManyToManyField(Student, null=True, blank=True)
-    language = models.ForeignKey(Language, null=True, on_delete=models.SET_NULL)
-    lesson = models.ManyToManyField(Lesson, null =True, blank=True)
-    bio = models.TextField(null=True, max_length = 250)
-
-    def __str__(self):
-        return self.full_name
 
 
 
