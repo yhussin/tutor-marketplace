@@ -32,7 +32,8 @@
   {% endfor %}
 </div>
 {% else %}
-  <h4>No Lessons</h4>
+  <h4>No Lessons Booked</h4>
+  <p>Find lessons in the language you want to learn <a href="{% url 'language_index' %}">here!</a></p>
 {% endif %}
 
 {% endblock %}
