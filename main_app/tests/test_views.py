@@ -33,3 +33,33 @@ class HomeViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'home.html')
 
+class StudentProfileViewTest(TestCase):
+    @classmethod
+    def setUp(cls):
+        user = User.objects.create(username='test', password='test')
+        user.student_set.create(full_name='Harry Potter')
+        student = user.student_set.first()
+        user.save()
+
+    def test_view_url_exists_at_desired_location(self):
+        login = self.client.login(username='test', password='test')
+        response = self.client.get('/students/profile/1/')
+        # check user is logged in
+        self.assertEqual(response.status_code, 200)
+
+    def test_view_url_accessible_by_name(self):
+        login = self.client.login(username='test', password='test')
+        response = self.client.get(reverse('student_profile', kwargs={'student_id': 1}))
+        self.assertEqual(response.status_code, 200)
+        self.assertRedirects(response, '/students/profile/1/')
+
+    def test_view_uses_correct_template(self):
+        login = self.client.login(username='test', password='test')
+        response = self.client.get(reverse('student_profile', kwargs={'student_id': 1}))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'students/profile.html')
+            
+    def test_view_redirects_to_login(self):
+        response = self.client.get(reverse('student_profile', kwargs={'student_id': 1}))
+        self.assertEqual(response.status_code, 302)
+

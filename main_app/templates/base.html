@@ -8,23 +8,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Tutor Marketplace</title>
+  {% load bootstrap4 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript jquery='full' %}
+  {{ form.media }}
   <!-- Bootstrap CSS here -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
   <!-- Main CSS -->
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  
 </head>
 
 <body>
   <header class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
-
-        <!-- <div class="jumbotron">
-          <div class="container text-center">
-            <h1><a href="{% url 'home' %}">Tutor Marketplace</a></h1>
-          </div>
-        </div> -->
 
         <nav class="navbar fixed-top navbar-expand-md navbar-inverse bg-light">
           <div class="container-fluid">
@@ -55,7 +54,6 @@
                   <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
                   <li class="nav-item"><a class="nav-link" href="{% url 'signup' %}">Sign Up</a></li>
                 {% endif %}
-                <li class="nav-item"><a class="nav-link" href="/admin/">Admin</a></li>
               </ul>
             </div>
           </div>
