@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Student Profile</h1>
+
+<h3>{{ student.full_name }}</h3>
+<!--Display lessons-->
+<br/>
+{% if student.lesson.count %}
+<div class="row">
+  {% for lesson in student.lesson.all %}
+    <!--Display lesson information-->
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-header text-center">
+            <h4>{{ lesson.name }}</h4>
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            <h5>Language: {{ lesson.language }}</h5>
+            <h5>Teacher: <a href="{% url 'teacher_details' lesson.teacher.id %}">{{ lesson.teacher.full_name }}</a> </h5>
+            <h5>Time: {{ lesson.time }} </h5>
+            <h5>Price: ${{ lesson.price }} </h5>
+          </div>
+        </div>
+        <div class="card-footer text-center">
+          <!--Cancel Lesson Link-->
+          <a href="{% url 'cancel_booking' lesson.id %}"><button class="btn btn-danger">Cancel Lesson</button></a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% else %}
+  <h4>No Lessons</h4>
+{% endif %}
+
+{% endblock %}
