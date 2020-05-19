@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,10 +21,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '_yrft!3l6qkzqcue(m*p6ni&s9suxvdkgvw23xr2@hw=bx00j^'
+SECRET_KEY = os.environ['TUTOR_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ['TUTOR_DEBUG']
 
 ALLOWED_HOSTS = []
 
@@ -126,3 +127,6 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = 'language_index'
 
 LOGOUT_REDIRECT_URL = '/'
+
+# Heroku deployment
+django_heroku.settings(locals())
