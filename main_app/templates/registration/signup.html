@@ -11,7 +11,7 @@
   {% csrf_token %}
   <!--Full Name-->
   <label for="full_name">Full Name</label>
-  <input type="text" id="full_name" name="full_name">
+  <input type="text" id="full_name" name="full_name" autofocus required>
   {{ form.as_p }}
 
   <br/>
