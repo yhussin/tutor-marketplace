@@ -20,3 +20,14 @@ class StudentModelTest(TestCase):
         student = Student.objects.get(id=1)
         expected_object_name = student.full_name
         self.assertEquals(expected_object_name, str(student))
+
+class TeacherModelTest(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        user = User.objects.create_user(username='test', password='test')
+        user.teacher_set.create(full_name='Severus Snape')
+
+    def test_full_name_label(self):
+        teacher = Teacher.objects.get(id=1)
+        field_label = teacher._meta.get_field('full_name').verbose_name
+        self.assertEquals(field_label, 'full name')
