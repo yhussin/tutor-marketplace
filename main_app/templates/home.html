@@ -8,11 +8,23 @@
         <a href="{% url 'signup' %}">Sign up today as a teacher or student!</a>
       </div>
     </div>
-    <!--TODO: fill out action and method-->
-    <div>
-      <form class="form-group" action="{% url 'search'%}"> Search for Teachers by Language:
-        <input type="text" name="query" class="form-control" size="50" placeholder="ex. English">
-        <button type="submit" class="btn btn-danger">Search</button>
+    <!--Search bar for languages-->
+    <div class="text-center">
+      <form class="form-group" action="{% url 'search'%}"> 
+        <div class="form-row">
+          <div class="col-md">
+            <h3>Search by Language: </h3>
+          </div>
+
+        </div>
+        <div class="row justify-content-center align-items-center no-gutters">
+          <div class="col-md-5">
+            <input type="text" name="query" class="form-control" placeholder="ex. English">
+          </div>
+          <div class="col-md-3">
+            <button type="submit" class="btn btn-danger">Find Teachers</button>
+          </div>
+        </div>
       </form>
     </div>
   
