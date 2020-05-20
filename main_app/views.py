@@ -1,19 +1,19 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+# Models and Forms
 from .models import Language, Student, Teacher, Lesson
 from .forms import LessonForm, TeacherForm
-
 # Auth
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
-
 # Decorators
 from django.contrib.auth.decorators import login_required, user_passes_test
 
 
-# User Permission Tests
+# ==== User Permission Tests
 def user_is_student(user):
     return user.student_set.count() != 0
+
 
 def user_is_teacher(user):
     return user.teacher_set.count() != 0
@@ -29,6 +29,7 @@ def home(request):
         'languages': languages,
     }
     return render(request, template, context)
+
 
 def about(request):
     return render(request, 'about.html')
@@ -61,6 +62,7 @@ def teacher_index(request):
     }
     return render(request, template, context)
 
+
 # Teacher Private Profile
 @login_required
 @user_passes_test(user_is_teacher)
@@ -88,6 +90,7 @@ def teacher_profile(request, teacher_id):
     }
     return render(request, template, context)
 
+
 # Teacher Public Profile
 def teacher_details(request, teacher_id):
     # get teacher by id
@@ -101,6 +104,7 @@ def teacher_details(request, teacher_id):
         'lessons': lessons_without_students,
     }
     return render(request, template, context)
+
 
 # Edit Teacher Public Profile
 @login_required
@@ -151,6 +155,7 @@ def lesson_index(request, language_id):
     }
     return render(request, template, context)
 
+
 # NEW Lesson
 @login_required
 @user_passes_test(user_is_teacher)
@@ -187,11 +192,11 @@ def new_lesson(request):
         # redirect to student's profile page
         return redirect('student_profile', student_id=student_id)
 
+
 # Delete Lesson
 @login_required
 @user_passes_test(user_is_teacher)
 def delete_lesson(request, lesson_id):
-    # TODO: only let teacher delete their own lesson
     # get lesson to delete from database
     lesson = Lesson.objects.get(id=lesson_id)
     # delete from database
@@ -228,6 +233,7 @@ def make_booking(request, lesson_id):
         messages.error(request, 'Only registered users can book lessons. Please log in or sign up')
         return redirect('login')
     
+
 # Cancel a Lesson
 @login_required
 def cancel_booking(request, lesson_id):
@@ -242,7 +248,6 @@ def cancel_booking(request, lesson_id):
     messages.success(request, 'Booking canceled')
     # redirect to student's profile
     return redirect('student_profile', student_id=student.id)
-    # TODO: teacher's version of cancel? maybe?
 
 
 # ==== LANGUAGE VIEWS
@@ -256,6 +261,7 @@ def language_index(request):
     }
     # render template
     return render(request, template, context)
+
 
 def search(request):
     query = request.GET['query']
