@@ -3,10 +3,15 @@
 
 <h1>Edit Teacher Public Profile</h1>
 
-<form action="{% url 'teacher_edit' teacher.id %}" method="POST">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <input type="submit" class="btn btn-primary" value="Submit">
-</form>
+<div class="row">
+  <div class="col-md-6">
+    <form action="{% url 'teacher_edit' teacher.id %}" method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" class="btn btn-primary" value="Submit">
+    </form>
+</div>
+</div>
+
 
 {% endblock %}
