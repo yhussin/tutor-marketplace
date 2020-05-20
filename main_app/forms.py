@@ -24,6 +24,7 @@ class TeacherForm(forms.ModelForm):
     # add bootstrap form-control class to all text inputs
     full_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     bio = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control'}))
+    image_url = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     class Meta: 
         model = Teacher
         fields = ['full_name', 'language', 'bio']
