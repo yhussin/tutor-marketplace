@@ -11,7 +11,7 @@
         <div class="row no-gutters align-items-center">
           <div class="col-sm-4">
             <div class="image-cropper">
-              <img src="{{ teacher.image_url }}" alt="" class="card-img">
+              <img src="{{ teacher.image_url }}" alt="profile image" class="card-img">
             </div>
           </div>
           <div class="col-sm-5">
@@ -20,7 +20,7 @@
                 <h3>{{ teacher.full_name }}</h3>
               </div>
               <div class="card-text">
-                <p>Language: {{ teacher.language }}</p>
+                <p><strong>Language:</strong> {{ teacher.language }}</p>
                 <p>{{ teacher.bio }}</p>
               </div>
             </div>
