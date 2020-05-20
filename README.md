@@ -25,7 +25,8 @@ Teachers can register and create a profile. Once signed in, they can see current
 * Add teaching subjects other than languages
 
 ## Data Model
-
+* One to many relationship between Teacher, Lessons, and Language. 
+* Many to many relationship between Students and Lessons
 ![Data Model](./main_app/static/images/ERD.png)
 
 ## Wireframes
