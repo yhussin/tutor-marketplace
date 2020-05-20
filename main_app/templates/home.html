@@ -43,7 +43,7 @@
     <div class="row">
       <!--Display 2 teachers in this language-->
       {% for teacher in language.teacher_set.all|slice:":2" %}
-        <div class="col-sm-6">
+        <div class="col-md-6">
           <div class="card">
             <!--Make entire card a link-->
             <a href="{% url 'teacher_details' teacher.id %}">
@@ -52,8 +52,11 @@
                 <h5>{{ teacher.full_name }}</h5>
               </div>
               <!--Teacher Image-->
-              <div class="panel-body"><img src="{{ teacher.image_url }}" class="img-responsive" style="width:100%"
-                  alt="Image"></div>
+              <div class="panel-body text-center">
+                <div class="image-cropper">
+                  <img src="{{ teacher.image_url }}" class="img-responsive" >
+                </div>
+              </div>
               <div class="card-footer text-center">
                 <button class="btn btn-info">View Profile</button>
               </div>

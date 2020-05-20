@@ -1,5 +1,9 @@
 body {
-  padding-top: 4.5rem;
+  padding-top: 4rem;
+}
+
+main {
+  background-color: #F1F1F1DE;
 }
 
 p {
@@ -12,12 +16,16 @@ button, .btn {
   margin-bottom: 10px;
 }
 
+/* Homepage Jumbotron */
+
 .bg-overlay {
-  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("https://unsplash.imgix.net/photo-1416339442236-8ceb164046f8?q=75&fm=jpg&s=8eb83df8a744544977722717b1ea4d09");
+  /* background: linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)), url("https://unsplash.imgix.net/photo-1416339442236-8ceb164046f8?q=75&fm=jpg&s=8eb83df8a744544977722717b1ea4d09"); */
+  background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("https://unsplash.imgix.net/photo-1416339442236-8ceb164046f8?q=75&fm=jpg&s=8eb83df8a744544977722717b1ea4d09");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  color: #F1F1F1DE;
+  /* color: #F1F1F1DE; */
+  color: #272727;
   height: 350px;
   padding-top: 50px;
 }
@@ -28,10 +36,35 @@ button, .btn {
   align-items: center;
 }
 
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
+.jumbotron .container {
+  background-color: #FFFFFFE7;
 }
 
+.jumbotron a {
+ /* color: #84C9FBDE; */
+}
+
+/* Navbar */
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(39, 39, 39, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
+}
+
+.navbar {
+  background: linear-gradient(rgba(255,255,255,.77), rgba(255,255,255,.77)), url("https://www.nationalgeographic.com/content/dam/ngdotcom/rights-exempt/maps/world-classic-2018-banner-clip-72.adapt.1900.1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% -224px;
+  background-attachment: fixed;
+  
+}
+.navbar a {
+  font-weight: 600;
+  /* color: #F1F1F1DE; */
+  color: #272727;
+}
+
+/* Alert Messages that appear on top of page */
 .messages {
   text-align: center;
 }
@@ -44,6 +77,7 @@ button, .btn {
   color: #FF000080;
 }
 
+/* Cards */
 .card {
   margin: 10px;
   border-radius: 8px;
@@ -61,3 +95,21 @@ button, .btn {
 .card-body {
   padding: 0.75rem;
 }
+
+.image-cropper {
+  max-height: 150px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.card img {
+  /* height: 100%; */
+  width: 100%;
+}
+
+/* Media Queries */
+ @media screen and (max-width: 760px) {
+   body {
+     padding-top: 5.2rem;
+   }
+ }
