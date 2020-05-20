@@ -27,4 +27,4 @@ class TeacherForm(forms.ModelForm):
     image_url = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
     class Meta: 
         model = Teacher
-        fields = ['full_name', 'language', 'bio']
+        fields = ['full_name', 'language', 'bio', 'image_url']
