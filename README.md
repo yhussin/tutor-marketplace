@@ -1,3 +1,7 @@
+## Technologies used
+Python, Django, Bootstrap
+
+
 # Tutor Marketplace
 
 Tutor Marketplace is an app that connects students with teachers to facilitate online learning.  It is free to join and create your profile, so you pay nothing until you find the lesson that you're looking for. Users can log in as students or as teachers, and their profile and functions will vary depending on which.  Teachers can add lessons and availability, while students can select teachers and lessons. All lessons are currently one-on-one. 
@@ -17,14 +21,24 @@ Ratings - students rate teachers (and vice versa?)
 Payment via Stripe
 Add teaching subjects other than languages
 
-## Wireframes
-
-![Wireframe](./public/assets/wireframe.png)
-
 ## Data Model
 
-![Data Model](./public/assets/data-model.png)
+![Data Model](./main_app/static/images/ERD.png)
 
+## Wireframes
+
+![Wireframe](./main_app/static/images/wire1.png)
+![Wireframe](./main_app/static/images/wire2.png)
+![Wireframe](./main_app/static/images/wire3.png)
+![Wireframe](./main_app/static/images/wire4.png)
+![Wireframe](./main_app/static/images/wire5.png)
+![Wireframe](./main_app/static/images/wire6.png)
+![Wireframe](./main_app/static/images/wire7.png)
+![Wireframe](./main_app/static/images/wire8.png)
+![Wireframe](./main_app/static/images/wire9.png)
+![Wireframe](./main_app/static/images/wire10.png)
+![Wireframe](./main_app/static/images/wire11.png)
+![Wireframe](./main_app/static/images/wire12.png)
 
 ## Milestones
 
