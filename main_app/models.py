@@ -26,7 +26,7 @@ class Teacher(models.Model):
     full_name = models.CharField(max_length =100)
     language = models.ForeignKey(Language, null=True, on_delete=models.SET_NULL)
     bio = models.TextField(null=True, max_length = 250)
-    image_url = models.CharField(max_length =200, default='https://placehold.it/150x80?text=IMAGE')
+    image_url = models.CharField(max_length =200, default='https://clipartart.com/images/free-world-flag-clipart-4.png')
 
 
     def __str__(self):
