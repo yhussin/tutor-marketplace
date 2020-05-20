@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Teacher Profile Page</h1>
+<!-- <h1>Teacher Profile Page</h1> -->
 <div class="row">
   <div class="col-md-8">
-    <h2>{{ teacher.full_name }}</h2>
+    <h1>Welcome, {{ teacher.full_name }}</h1>
   </div>
 </div>
 <div class="row">
@@ -13,7 +13,7 @@
       <!--Edit Public Profile Link-->
       <a href="{% url 'teacher_edit' teacher.id %}"><button class="btn btn-secondary">Edit Public Profile</button></a>
       <!--View Public Profile-->
-      <a href="{% url 'teacher_details' teacher.id %}"><button class="btn btn-primary">View Public Profile</button></a>
+      <a href="{% url 'teacher_details' teacher.id %}"><button class="btn btn-info">View Public Profile</button></a>
       <!--Add a lesson-->
       <a href="{% url 'new_lesson' %}"><button class="btn btn-success">New Lesson</button></a>
   </div>
