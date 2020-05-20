@@ -2,10 +2,6 @@ body {
   padding-top: 3.5rem;
 }
 
-main {
-  background-color: #F1F1F1DE;
-}
-
 p {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
@@ -19,7 +15,6 @@ button, .btn {
 /* Homepage Jumbotron */
 
 .bg-overlay {
-  /* background: linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)), url("https://unsplash.imgix.net/photo-1416339442236-8ceb164046f8?q=75&fm=jpg&s=8eb83df8a744544977722717b1ea4d09"); */
   background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("https://unsplash.imgix.net/photo-1416339442236-8ceb164046f8?q=75&fm=jpg&s=8eb83df8a744544977722717b1ea4d09");
   background-repeat: no-repeat;
   background-size: cover;
@@ -31,6 +26,7 @@ button, .btn {
 }
 
 .jumbotron {
+  margin-top: .5rem;
   display: flex;
   justify-content: center; 
   align-items: center;
@@ -38,10 +34,6 @@ button, .btn {
 
 .jumbotron .container {
   background-color: #FFFFFFE7;
-}
-
-.jumbotron a {
- /* color: #84C9FBDE; */
 }
 
 /* Navbar */
@@ -103,7 +95,6 @@ button, .btn {
 }
 
 .card img {
-  /* height: 100%; */
   width: 100%;
 }
 
