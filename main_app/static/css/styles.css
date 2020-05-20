@@ -7,7 +7,7 @@ p {
   margin-bottom: 0.25rem;
 }
 
-button {
+button, .btn {
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -51,6 +51,11 @@ button {
 
 .card-header {
   padding-bottom: 3px;
+}
+
+.card-footer {
+  padding-top: .15rem;
+  padding-bottom: .15rem;
 }
 
 .card-body {
