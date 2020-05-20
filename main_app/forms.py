@@ -20,4 +20,4 @@ class LessonForm(forms.ModelForm):
 class TeacherForm(forms.ModelForm):
     class Meta: 
         model = Teacher
-        fields = ['full_name', 'language', 'bio']
+        fields = ['full_name', 'language', 'bio', 'image_url']
