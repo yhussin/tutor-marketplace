@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <div class="jumbotron bg-overlay">
+    <div class="jumbotron jumbotron-fluid bg-overlay">
       <div class="container text-center">
-        <h1>Tutor Marketplace</h1>
-        <p>We connect language teachers and students</p>
-        <a href="{% url 'signup' %}">Sign up today as a teacher or student!</a>
+        <h1 class="display-4">Tutor Marketplace</h1>
+        <p class="lead">We connect language teachers and students</p>
+        <h3 class="display-8"><a href="{% url 'signup' %}">Sign up today as a teacher or student!</a></h3>
       </div>
     </div>
     <!--Search bar for languages-->
