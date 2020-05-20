@@ -5,9 +5,11 @@ urlpatterns = [
   path('', views.home, name='home'),
   path('about/', views.about, name='about'),
 
+
   # === Student URLs
   # Student profile page
   path('students/<int:student_id>/', views.student_profile, name='student_profile'),
+
 
   # === Teacher URLs
   # Teachers index page, shows all teachers
@@ -25,6 +27,7 @@ urlpatterns = [
   # Filter teachers by language
   path('languages/<int:language_id>/teachers/', views.teachers_filtered, name="teachers_filtered"),
 
+
   # === Lesson URLs
    # New Lesson
   path('lessons/new/', views.new_lesson, name='new_lesson'),
@@ -40,6 +43,7 @@ urlpatterns = [
   
   # Available lessons in the given language
   path('languages/<int:language_id>/lessons/', views.lesson_index, name="lesson_index"),
+
 
   # === Language URLs
   path('languages/', views.language_index, name='language_index'),

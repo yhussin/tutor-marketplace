@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Student Profile</h1>
+<h1>Welcome, {{student.full_name}}</h1>
 
-<h3>{{ student.full_name }}</h3>
 <!--Display lessons-->
 <br/>
+<h3>Your Lessons</h3>
 {% if student.lesson.count %}
 <div class="row">
   {% for lesson in student.lesson.all %}
@@ -17,10 +17,10 @@
         </div>
         <div class="card-body">
           <div class="card-text">
-            <h5>Language: {{ lesson.language }}</h5>
-            <h5>Teacher: <a href="{% url 'teacher_details' lesson.teacher.id %}">{{ lesson.teacher.full_name }}</a> </h5>
-            <h5>Time: {{ lesson.time }} </h5>
-            <h5>Price: ${{ lesson.price }} </h5>
+            <p><strong>Language:</strong> {{ lesson.language }}</p>
+            <p><strong>Teacher:</strong> <a href="{% url 'teacher_details' lesson.teacher.id %}">{{ lesson.teacher.full_name }}</a> </p>
+            <p><strong>Time:</strong> {{ lesson.time }} </p>
+            <p><strong>Price:</strong> ${{ lesson.price }} </p>
           </div>
         </div>
         <div class="card-footer text-center">
@@ -32,7 +32,8 @@
   {% endfor %}
 </div>
 {% else %}
-  <h4>No Lessons</h4>
+  <h4>No Lessons Booked</h4>
+  <p>Find lessons in the language you want to learn <a href="{% url 'language_index' %}">here!</a></p>
 {% endif %}
 
 {% endblock %}
