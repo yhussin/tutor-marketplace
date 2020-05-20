@@ -1,10 +1,12 @@
-## Technologies used
-Python, Django, Bootstrap
+
 
 
 # Tutor Marketplace
 
 Tutor Marketplace is an app that connects students with teachers to facilitate online learning.  It is free to join and create your profile, so you pay nothing until you find the lesson that you're looking for. Users can log in as students or as teachers, and their profile and functions will vary depending on which.  Teachers can add lessons and availability, while students can select teachers and lessons. All lessons are currently one-on-one. 
+
+## Technologies used
+Python, Django, PostgreSQL, Bootstrap, HTML, Heroku
 
 ## User Stories
 
@@ -14,12 +16,13 @@ Then student can register and sign in, and choose a teacher. Each teacher will h
 A student when signed in can see the current teachers they are signed up for, and past teachers. 
 Teachers can register and create a profile. Once signed in, they can see current students and past students.
 
-Stretch goals:
-Search capability
-Choose a topic with teacher (conversational practice, reading & writing, etc)
-Ratings - students rate teachers (and vice versa?)
-Payment via Stripe
-Add teaching subjects other than languages
+### Future development
+
+* Search capability
+* Choose a topic with teacher (conversational practice, reading & writing, etc)
+* Ratings - students rate teachers (and vice versa?)
+* Payment via Stripe
+* Add teaching subjects other than languages
 
 ## Data Model
 
@@ -27,7 +30,6 @@ Add teaching subjects other than languages
 
 ## Wireframes
 
-![Wireframe](./main_app/static/images/wire1.png)
 ![Wireframe](./main_app/static/images/wire2.png)
 ![Wireframe](./main_app/static/images/wire3.png)
 ![Wireframe](./main_app/static/images/wire4.png)
